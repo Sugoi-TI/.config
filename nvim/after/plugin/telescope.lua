@@ -19,6 +19,22 @@ telescope.setup {
                 ["c"] = fb_actions.create,
             },
         },
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--ignore-file',
+            '--no-require-git',
+            '.gitignore'
+        },
+        file_ignore_patterns = {
+            "node_modules",
+            ".git"
+        }
     },
     pickers = {
         buffers = {

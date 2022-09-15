@@ -1,0 +1,43 @@
+general {
+        colors = true
+        color_good = "#73daca"
+        color_degraded = "#e0af68"
+        color_bad = "#f7768e"
+        interval = 5
+}
+
+order += "volume master"
+order += "cpu_usage"
+order += "wireless _first_"
+order += "memory"
+order += "tztime local"
+
+volume master {
+        format = "VOL %volume"
+        format_muted = "VOL muted"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+cpu_usage {
+        format= "CPU %usage"
+        degraded_threshold = 65
+        max_threshold = 75
+        
+}
+
+wireless _first_ {
+        format_up = "%quality %bitrate"
+        format_down = "WIFI off"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M"
+}
+
+memory {
+        format = "MEM %percentage_used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
